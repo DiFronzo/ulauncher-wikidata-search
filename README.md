@@ -1,5 +1,6 @@
 <h1 align="center">
      Ulauncher Wikidata Search
+     ![demo.png](demo.png)
 </h1>
 <p align="center">Ulauncher extension to search for items on Wikidata by label 
 
