@@ -1,0 +1,18 @@
+{
+    "required_api_version": "^2.0.0",
+    "name": "Wikidata search",
+    "description": "Convenient search for items on Wikidata",
+    "developer_name": "DiFronzo",
+    "icon": "images/icon.png",
+    "options": {
+        "query_debounce": 1
+    },
+    "preferences": [
+        {
+            "id": "keyword",
+            "type": "keyword",
+            "name": "Wikidata",
+            "default_value": "wd"
+        }
+    ]
+}
