@@ -1,10 +1,13 @@
 <h1 align="center">
      Ulauncher Wikidata Search
-     ![demo.png](demo.png)
 </h1>
 <p align="center">Ulauncher extension to search for items on Wikidata by label 
 
 <p align="center"><a href="https://github.com/DiFronzo/ulauncher-wikidata-search/releases" target="_blank"><img src="https://img.shields.io/badge/version-v1.0.0-blue?style=for-the-badge&logo=none" alt="UWS version" /></a>&nbsp;<img src="https://img.shields.io/badge/Python-3.5+-00ADD8?style=for-the-badge&logo=python" alt="python version" /></a>&nbsp;<img src="https://img.shields.io/badge/license-MIT-red?style=for-the-badge&logo=none" alt="license" />&nbsp;<img alt="code size" src="https://img.shields.io/github/languages/code-size/difronzo/ulauncher-wikidata-search?style=for-the-badge&logo=none"></p>
+
+<p align="center">
+  <img src="https://github.com/DiFronzo/ulauncher-wikidata-search/blob/main/demo.png?raw=true" alt="ulauncher-wikidata-search in action"/>
+</p>
 
 
 ## ⚡️ Install
