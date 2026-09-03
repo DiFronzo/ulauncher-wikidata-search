@@ -26,18 +26,48 @@ class KeywordQueryEventListener(EventListener):
                                     on_enter=HideWindowAction())
             ])
         else:
-            result = requests.get("https://www.wikidata.org/w/api.php?action=wbsearchentities&search="+query+"&language=en&uselang=en&type=item&limit=10&format=json").json()
+            try:
+                response = requests.get(
+                    "https://www.wikidata.org/w/api.php",
+                    params={
+                        "action": "wbsearchentities",
+                        "search": query,
+                        "language": "en",
+                        "uselang": "en",
+                        "type": "item",
+                        "limit": 10,
+                        "format": "json",
+                    },
+                    headers={
+                        "User-Agent": "ulauncher-wikidata-search/1.0 (https://github.com/DiFronzo/ulauncher-wikidata-search)"
+                    },
+                    timeout=5,
+                )
+                response.raise_for_status()
+                result = response.json()
+            except (requests.RequestException, ValueError):
+                return RenderResultListAction([
+                    ExtensionResultItem(icon='images/icon.png',
+                                        name='Could not reach Wikidata',
+                                        description='Check your internet connection and try again.',
+                                        on_enter=HideWindowAction())
+                ])
+
             items = []
 
-            for i in result["search"]:
-                desc = "No description"
-                if "description" in i:
-                    desc = i["description"]
+            for i in result.get("search", []):
+                desc = i.get("description", "No description")
 
                 items.append(ExtensionResultItem(icon='images/icon.png',
                                                  name=i["label"],
                                                  description=desc,
                                                  on_enter=OpenUrlAction(i["concepturi"])))
+
+            if not items:
+                items.append(ExtensionResultItem(icon='images/icon.png',
+                                                 name='No results',
+                                                 description='No Wikidata entities matched "%s".' % query,
+                                                 on_enter=HideWindowAction()))
 
             return RenderResultListAction(items)
 
