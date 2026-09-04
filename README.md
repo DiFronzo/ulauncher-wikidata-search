@@ -27,4 +27,4 @@ If you want to say **thank you** or/and support active development of `ulauncher
 - Add a [GitHub Star](https://github.com/DiFronzo/ulauncher-wikidata-search) to the project.
 
 ## ⚠️ License
-`OpenLibrary-GraphQL` is free and open-source software licensed under the [MIT](https://github.com/DiFronzo/ulauncher-wikidata-search/blob/main/LICENSE). This is not an offical release from [Wikimedia Foundation](https://wikimediafoundation.org/). Use on your own risk.
+`Ulauncher-wikidata-search` is free and open-source software licensed under the [MIT](https://github.com/DiFronzo/ulauncher-wikidata-search/blob/main/LICENSE).
